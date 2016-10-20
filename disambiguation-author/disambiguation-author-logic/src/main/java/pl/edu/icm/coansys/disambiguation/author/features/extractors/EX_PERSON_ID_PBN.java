@@ -18,19 +18,20 @@
 package pl.edu.icm.coansys.disambiguation.author.features.extractors;
 
 import pl.edu.icm.coansys.disambiguation.author.normalizers.PigNormalizer;
+import pl.edu.icm.coansys.disambiguation.author.normalizers.ToHashCode;
 
 
 public class EX_PERSON_ID_PBN extends EX_PERSON_ID {
 
-        private static PigNormalizer[] new_normalizers = {};
-        private static String[] usedIDs = {"pbnPersonId"};
+    private static String[] usedIDs = {"pbnPersonId"};
+    private static PigNormalizer[] new_normalizers = {new ToHashCode()};
 
-        public EX_PERSON_ID_PBN() {
-                super(new_normalizers, usedIDs);
-        }
+    public EX_PERSON_ID_PBN() {
+        super(new_normalizers, usedIDs);
+    }
 
-	@Override
-	public String getId() {
-		return "8.5";
-	}
+    @Override
+    public String getId() {
+        return "8.5";
+    }
 }

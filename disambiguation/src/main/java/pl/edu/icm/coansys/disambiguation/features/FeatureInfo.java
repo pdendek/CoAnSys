@@ -74,7 +74,7 @@ public class FeatureInfo {
 	 * will be assigned to a proper {@link FeatureInfo} fields via the constructor. 
 	 * @return A list of {@link FeatureInfo} objects, sorted by the "weight" field in a descending manner.  
 	 */
-	public static List<FeatureInfo> parseFeatureInfoString(String info){
+	public static List<FeatureInfo> fromString(String info){
 		List<FeatureInfo> ret = new ArrayList<FeatureInfo>(); 
     	String[] finfos = info.split(",");
     	for(String finfo : finfos){

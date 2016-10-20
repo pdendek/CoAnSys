@@ -59,7 +59,7 @@ public class SvmMaxValPairsCreator extends EvalFunc<Tuple> {
     private FeatureInfo[] featureInfos;
 
     public SvmMaxValPairsCreator(String featureDescription) {
-        List<FeatureInfo> FIwithEmpties = FeatureInfo.parseFeatureInfoString(featureDescription);
+        List<FeatureInfo> FIwithEmpties = FeatureInfo.fromString(featureDescription);
         List<FeatureInfo> FIFinall = new LinkedList<FeatureInfo>();
         List<PigDisambiguator> FeaturesFinall = new LinkedList<PigDisambiguator>();
 

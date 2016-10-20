@@ -57,7 +57,7 @@ public abstract class AND<T> extends EvalFunc<T> {
 		boolean useIdsForExtractors = Boolean.parseBoolean(useIdsForExtractorsStr);
 
 		List<FeatureInfo> FIwithEmpties = FeatureInfo
-				.parseFeatureInfoString(featureDescription);
+				.fromString(featureDescription);
 		List<FeatureInfo> FIFinall = new LinkedList<FeatureInfo>();
 		List<PigDisambiguator> FeaturesFinall = new LinkedList<PigDisambiguator>();
 

@@ -185,7 +185,7 @@ public class DisambiguationTest {
    	@org.testng.annotations.Test(groups = {"fast"})
    	public void features_disambiguator_factory() {
    		String featureDescription = "Intersection#whatever#0.0#0";
-		List<FeatureInfo> filist = FeatureInfo.parseFeatureInfoString(featureDescription);
+		List<FeatureInfo> filist = FeatureInfo.fromString(featureDescription);
 		FeatureInfo fi = filist.get(0);
 		
    		DisambiguatorFactory ff = new DisambiguatorFactory();

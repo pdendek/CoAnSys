@@ -17,19 +17,18 @@
  */
 package pl.edu.icm.coansys.disambiguation.author.features.extractors;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.pig.data.DataBag;
 import org.apache.pig.data.DefaultDataBag;
 import org.apache.pig.data.Tuple;
 import org.apache.pig.data.TupleFactory;
-
 import pl.edu.icm.coansys.disambiguation.author.features.extractors.indicators.DisambiguationExtractorAuthor;
 import pl.edu.icm.coansys.disambiguation.author.normalizers.PigNormalizer;
 import pl.edu.icm.coansys.models.DocumentProtos.Author;
 import pl.edu.icm.coansys.models.DocumentProtos.DocumentMetadata;
 import pl.edu.icm.coansys.models.DocumentProtos.KeyValue;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //Note that we do not use normalization for that one.
 public class EX_PERSON_ID extends DisambiguationExtractorAuthor {
@@ -72,7 +71,8 @@ public class EX_PERSON_ID extends DisambiguationExtractorAuthor {
 				if ( kv.getValue() == null || kv.getValue().isEmpty() ) {
 					continue;
 				}
-				t.append(kv.getValue());
+
+				t.append(normalizeExtracted(kv.getValue()));
 				db.add(t);
 				break;
 			}
